@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
+    
+    
+    
     public int lives = 1;
 
 
@@ -22,16 +24,23 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("up"))
+        Vector2 velocity = rb.velocity;
+        velocity.x = 0;
+        velocity.y = 30;
+
+
+        
+        
+        if (Input.GetKeyDown("up"))
         {
-            rb.velocity = new Vector3(0, 10, 0);
+            rb.velocity = velocity;
         }
-    
 
 
 
         float xSpeed = -10.0f;
-        //float ySpeed = 10.0f;
+
+        
 
         if (Input.GetKey("left"))
         {

@@ -22,38 +22,29 @@ public class Player2Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("w"))
+        Vector2 velocity = rb.velocity;
+ 
+        
+        
+        if (Input.GetKeyDown("w"))
         {
-            rb.velocity = new Vector3(0, 10, 0);
+            rb.velocity = velocity;
+            velocity.y = 15;
         }
-    
-
-
-
-        float xSpeed = -10.0f;
-        //float ySpeed = 10.0f;
+        
 
         if (Input.GetKey("a"))
         {
-
-            transform.position += new Vector3(xSpeed * Time.deltaTime, 0, 0);
-            transform.localScale += new Vector3(-2,0,0);
+            rb.velocity = velocity;
+            velocity.x = -15;
         }
 
         if (Input.GetKey("d"))
         {
-            transform.position += new Vector3(-xSpeed * Time.deltaTime, 0, 0);
+            rb.velocity = velocity;
+            velocity.x = 15;
         }
 
-        //if (Input.GetKey("up"))
-        //{
-        //    transform.position += new Vector3(0, ySpeed * Time.deltaTime, 0);
-        //}
-
-        //if (Input.GetKey("down"))
-        //{
-        //    transform.position += new Vector3(0, -ySpeed * Time.deltaTime, 0);
-        //}
 
 
 
