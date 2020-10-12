@@ -6,11 +6,8 @@ public class Player2Move : MonoBehaviour
 {
 
     public int lives = 1;
-
-
-
-
-    Rigidbody2D rb;
+    bool faceLeft = false;
+    private Rigidbody2D rb;
 
 
     // Start is called before the first frame update
@@ -20,6 +17,7 @@ public class Player2Move : MonoBehaviour
     }
 
     // Update is called once per frame
+   
     void Update()
     {
         Vector2 velocity = rb.velocity;
@@ -28,23 +26,42 @@ public class Player2Move : MonoBehaviour
         
         if (Input.GetKeyDown("w"))
         {
-            rb.velocity = velocity;
-            velocity.y = 15;
+            if (velocity.y == 0)
+            {
+                velocity.y = 35;
+            }
+            
         }
         
 
         if (Input.GetKey("a"))
         {
-            rb.velocity = velocity;
-            velocity.x = -15;
+            velocity.x = -8.0f;
+            faceLeft = true;
         }
 
-        if (Input.GetKey("d"))
+        else if (Input.GetKey("d"))
         {
-            rb.velocity = velocity;
-            velocity.x = 15;
+            velocity.x = 8f;
+            faceLeft = false;
         }
 
+        else
+        {
+            velocity.x = 0;
+        }
+
+        rb.velocity = velocity;
+
+        if (faceLeft == true)
+        {
+            transform.localScale = new Vector3(-2,2,2);
+        }
+
+        else
+        {
+            transform.localScale = new Vector3(2,2,2);
+        }
 
 
 
@@ -52,6 +69,7 @@ public class Player2Move : MonoBehaviour
         {
             lives = 0;
         }
+        
 
     }
 }
