@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Player2Move : MonoBehaviour
 {
-
+    
     public int lives = 1;
     bool faceLeft = false;
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
 
 
     // Start is called before the first frame update
@@ -24,9 +24,9 @@ public class Player2Move : MonoBehaviour
  
         
         
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKey("w"))
         {
-            if (velocity.y == 0)
+            if(velocity.y==0)
             {
                 velocity.y = 35;
             }
@@ -40,16 +40,13 @@ public class Player2Move : MonoBehaviour
             faceLeft = true;
         }
 
-        else if (Input.GetKey("d"))
+        if (Input.GetKey("d"))
         {
             velocity.x = 8f;
             faceLeft = false;
         }
 
-        else
-        {
-            velocity.x = 0;
-        }
+
 
         rb.velocity = velocity;
 
@@ -70,6 +67,14 @@ public class Player2Move : MonoBehaviour
             lives = 0;
         }
         
+
+
+
+
+
+
+
+
 
     }
 }

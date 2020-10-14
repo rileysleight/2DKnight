@@ -27,9 +27,12 @@ public class PlayerMove : MonoBehaviour
  
         
         
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKey("up"))
         {
-            velocity.y = 35;
+            if(velocity.y == 0)
+            {
+                velocity.y = 40;
+            }
         }
         
 
