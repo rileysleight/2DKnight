@@ -10,14 +10,16 @@ public class PlayerMove : MonoBehaviour
     public int lives = 1;
     bool faceLeft = false;
     private Rigidbody2D rb;
-
-
+    public Sprite standSprite;
+    public Sprite jumpSprite;
+    SpriteRenderer sr;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -70,6 +72,15 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey("z"))
         {
             lives = 0;
+        }
+
+        if (velocity.y >0.01f)
+        {
+            sr.sprite = jumpSprite;
+        }
+        else
+        {
+            sr.sprite = standSprite;
         }
 
     }

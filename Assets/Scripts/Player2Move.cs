@@ -8,6 +8,8 @@ public class Player2Move : MonoBehaviour
     public int lives = 1;
     bool faceLeft = false;
     Rigidbody2D rb;
+    public Sprite standSprite;
+    public Sprite jumpSprite;
 
 
     // Start is called before the first frame update
