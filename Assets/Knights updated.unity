@@ -606,6 +606,7 @@ MonoBehaviour:
   lives: 1
   standSprite: {fileID: 21300000, guid: e1cb57a558364524fa40f6eabed44afc, type: 3}
   jumpSprite: {fileID: 21300000, guid: 54b7b18170176ae428bbc99b569627ab, type: 3}
+  attackSprite: {fileID: 21300000, guid: 994c42345d9226545968b65beaa3b15f, type: 3}
 --- !u!212 &405916740
 SpriteRenderer:
   m_ObjectHideFlags: 0

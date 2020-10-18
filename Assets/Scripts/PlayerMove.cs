@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D rb;
     public Sprite standSprite;
     public Sprite jumpSprite;
+    public Sprite attackSprite;
     SpriteRenderer sr;
 
 
@@ -55,6 +56,9 @@ public class PlayerMove : MonoBehaviour
             velocity.x = 0;
         }
 
+      
+
+
         rb.velocity = velocity;
 
         if (faceLeft == true)
@@ -77,6 +81,11 @@ public class PlayerMove : MonoBehaviour
         if (velocity.y >0.01f)
         {
             sr.sprite = jumpSprite;
+        }
+        else if (Input.GetKey("space"))
+        {
+            sr.sprite = attackSprite;
+            Debug.Log("Hi");
         }
         else
         {
